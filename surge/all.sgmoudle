@@ -16,4 +16,5 @@ caipu = type=http-response, pattern=^https:\/\/api.*\.xiangha\.com, script-path=
 
 
 [MITM]
-hostname= %APPEND% biz.cyapi.cn, wrapper.cyapi.cn
+hostname= %APPEND% biz.cyapi.cn, wrapper.cyapi.cn, *.xiangha.com
+
