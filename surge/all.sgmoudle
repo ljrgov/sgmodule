@@ -1,6 +1,6 @@
-#!name=❏ 彩云,菜谱大全
-#!category=去除广告｜软件解锁｜
-#!desc=彩云天气pro
+#!name=❏ 部分软件合集
+#!category=去除广告&软件解锁
+#!desc=彩云,菜谱大全,翻咔,微商海报,blued
 
 [Map Local]
 # > 彩云天气 去广告
@@ -14,7 +14,10 @@
 # 菜谱大全
 caipu = type=http-response, pattern=^https:\/\/api.*\.xiangha\.com, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/caipu.js, requires-body=true, max-size=-1, timeout=60
 
+# >微商海报-海报制作&搞定海报设计（永久会员）
+wshb = type=http-response, pattern=^https?:\/\/api-poster.ycase.cn\/(web\/display\?subject|api\/user\/info|api\/User\/home), script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/wshb.js, requires-body=true, max-size=-1, timeout=60
+
 
 [MITM]
-hostname= %APPEND% biz.cyapi.cn, wrapper.cyapi.cn, *.xiangha.com
+hostname= %APPEND% biz.cyapi.cn, wrapper.cyapi.cn, *.xiangha.com, api-poster.ycase.cn
 
