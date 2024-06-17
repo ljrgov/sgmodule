@@ -11,6 +11,20 @@
 彩云天气 = type=http-response, pattern=^https:\/\/biz\.cyapi\.cn\/(p\/v1\/vip_info|v2\/user)|^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js, requires-body=true, max-size=-1
 彩云天气 = type=http-request, pattern=^https:\/\/wrapper\.cyapi\.cn\/v1\/(nafp\/origin_images|satellite)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js
 
+# > Nicegram☆解锁会员
+NicegramProCrack = type=http-response, pattern=^https?:\/\/nicegram\.cloud\/api\/v\d\/(ai-assistant\/purchase-list|user\/info|telegram\/auth), script-path=https://github.com/ddgksf2013/MoYu/raw/master/NicegramProCrack.js, requires-body=true, max-size=-1, timeout=60
+
+#blued##########
+blued = type=http-response, pattern=^https:\/\/social\.blued\.cn\/users\/.*\/setting, script-path=https://raw.githubusercontent.com/anyehttp/quantumult-x/main/Adguard/blued.js, requires-body=true, max-size=-1, timeout=60
+
+blued = type=http-response, pattern=^https:\/\/social\.blued\.cn\/users\/shadow, script-path=https://raw.githubusercontent.com/anyehttp/quantumult-x/main/Adguard/blued.js, requires-body=true, max-size=-1, timeout=60
+
+blued = type=http-response, pattern=^https:\/\/social\.blued\.cn\/users\/.*\/basi, script-path=https://raw.githubusercontent.com/anyehttp/quantumult-x/main/Adguard/blued.js, requires-body=true, max-size=-1, timeout=60
+#############以上为blued
+
+#翻咔
+fk = type=http-response, pattern=^https:\/\/api\.finka\.cn\/v1\/user\/setting\/privacy\?_t, script-path=https://raw.githubusercontent.com/anyehttp/quantumult-x/main/Adguard/fk.js, requires-body=true, max-size=-1, timeout=60
+
 # 菜谱大全
 caipu = type=http-response, pattern=^https:\/\/api.*\.xiangha\.com, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/caipu.js, requires-body=true, max-size=-1, timeout=60
 
@@ -19,5 +33,5 @@ wshb = type=http-response, pattern=^https?:\/\/api-poster.ycase.cn\/(web\/displa
 
 
 [MITM]
-hostname= %APPEND% biz.cyapi.cn, wrapper.cyapi.cn, *.xiangha.com, api-poster.ycase.cn
+hostname= %APPEND% biz.cyapi.cn, wrapper.cyapi.cn, *.xiangha.com, nicegram.cloud, api-poster.ycase.cn, api.finka.cn, *.blued.*
 
