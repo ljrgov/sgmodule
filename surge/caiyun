@@ -2,22 +2,19 @@
 #!category=去除广告&软件解锁
 #!desc=彩云天气
 
-
-[URL Rewrite]
-#翻咔
-"^https:\/\/mobads\.baidu\.com\/cpro\/ui\/mads\.php\?" - reject
-"^https:\/\/sdk\.e\.qq\.com\/event" - reject
-
 [Map Local]
 # > 彩云天气 去广告
 ^https:\/\/biz\.cyapi\.cn\/p\/v1\/entries\? data-type=text data="{}" status-code=200
-
 
 [Script]
 # > 彩云天气 解锁
 彩云天气 = type=http-response, pattern=^https:\/\/biz\.cyapi\.cn\/(p\/v1\/vip_info|v2\/user)|^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js, requires-body=true, max-size=-1
 彩云天气 = type=http-request, pattern=^https:\/\/wrapper\.cyapi\.cn\/v1\/(nafp\/origin_images|satellite)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js
 
+[URL Rewrite]
+#翻咔
+"^https:\/\/mobads\.baidu\.com\/cpro\/ui\/mads\.php\?" - reject
+"^https:\/\/sdk\.e\.qq\.com\/event" - reject
 
 [MITM]
 hostname= %APPEND% biz.cyapi.cn, wrapper.cyapi.cn, mobads.baidu.com, sdk.e.qq.com
