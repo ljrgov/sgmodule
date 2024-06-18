@@ -14,5 +14,5 @@ wshb = type=http-response, pattern=^https?:\/\/api-poster.ycase.cn\/(web\/displa
 
 
 [MITM]
-hostname= %APPEND% biz.cyapi.cn, wrapper.cyapi.cn, *.xiangha.com, nicegram.cloud, api-poster.ycase.cn
+hostname= %APPEND% *.xiangha.com, nicegram.cloud, api-poster.ycase.cn
 
