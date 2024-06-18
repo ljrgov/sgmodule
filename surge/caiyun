@@ -2,13 +2,15 @@
 #!category=去除广告&软件解锁
 #!desc=彩云天气
 
+
+[URL Rewrite]
+#翻咔
+"^https:\/\/mobads\.baidu\.com\/cpro\/ui\/mads\.php\?" - reject
+"^https:\/\/sdk\.e\.qq\.com\/event" - reject
+
 [Map Local]
 # > 彩云天气 去广告
 ^https:\/\/biz\.cyapi\.cn\/p\/v1\/entries\? data-type=text data="{}" status-code=200
-
-#翻咔
-^https:\/\/mobads\.baidu\.com\/cpro\/ui\/mads\.php\? data-type=text data="{}" status-code=200
-^https:\/\/sdk\.e\.qq\.com\/event data-type=text data="{}" status-code=200
 
 
 [Script]
