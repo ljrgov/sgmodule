@@ -1,14 +1,15 @@
 #!name=❏ 软件合集
 #!category=去除广告&软件解锁
-#!desc=菜谱大全,swiftgram,微商海报
+#!desc=菜谱大全,swiftgram,微商海报,京东美团穿山甲
+
+
 
 [Script]
 # 菜谱大全
 cpdq = type=http-response, pattern=^https:\/\/apiios_dq\.xiangha\.com, script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/cpdq.js, requires-body=true, max-size=-1, timeout=60
-
 #caipu = type=http-response, pattern=^https:\/\/api.*\.xiangha\.com, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/caipu.js, requires-body=true, max-size=-1, timeout=60
 
-# > Nicegram/swiftgram解锁会员
+# > Nicegram/swiftgram解锁会员####
 Nicegram&swiftgram = type=http-response, pattern=^https?:\/\/nicegram\.cloud\/api\/v\d\/(ai-assistant\/purchase-list|user\/info|telegram\/auth), script-path=https://github.com/ddgksf2013/MoYu/raw/master/NicegramProCrack.js, requires-body=true, max-size=-1, timeout=60
 
 # >微商海报-海报制作&搞定海报设计（永久会员）
