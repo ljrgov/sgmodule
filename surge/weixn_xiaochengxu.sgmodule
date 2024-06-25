@@ -2,6 +2,43 @@
 #!category=去除广告&软件解锁
 #!desc=微信小程序合集
 
+[URL Rewrite]
+########## App去广告 ##########
+# 京东金融 去除开屏广告
+# hostname = ms.jr.jd.com
+^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/newna\/m\/getLoadingPicture - reject-200
+
+# 京东极速版 去开屏-App内广告
+# hostname = *.360buyimg.com, api.m.jd.com
+^https:\/\/img11.360buyimg.com\/dl\/jfs\/t1\/195304\/29\/12317\/268480\/60e6fd21E02a8fb2a\/ - reject-200
+https://api.m.jd.com/client.action\?functionId=lite_advertising - reject
+
+# 穿山甲/拼多多之类广告
+# hostname = adim.pinduoduo.com
+^https:\/\/(adim|images)\.pinduoduo\.com\/(.+\/toutiao|mrk\/.+) - reject
+# hostname = video-dsp.pddpic.com
+^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/.+ - reject
+# hostname = *.gdt.qq.com
+^http[s]?:\/\/.*\.gdt\.qq\.com\/gdt_mview.fcg - reject
+# hostname = access.pangolin-sdk-toutiao*.com,
+^http[s]?:\/\/api-access\.pangolin-sdk-toutiao.*\.com - reject
+# hostname = *.pglstatp-toutiao.com
+^http[s]?:\/\/.*\.pglstatp-toutiao\.com\/.+ - reject
+# hostname = adsmind.gdtimg.com
+^https?:\/\/adsmind\.gdtimg\.com\/ads_svp_video.+ - reject
+# hostname = pgdt.gtimg.cn
+^https:\/\/pgdt\.gtimg\.cn - reject
+# hostname = us.l.qq.com
+^https?:\/\/us\.l\.qq\.com\/exapp.+ - reject
+
+# 掌上公交去广告
+# hostname = *.mygolbs.com
+^http?:\/\/quanguo\.mygolbs\.com:8081 - reject
+^https?:\/\/remind\.mygolbs\.com\/remind-off\/query\/.+ - reject
+# 掌上公交最下方新闻广告列表
+# hostname = crpu-openapi.baidu.com, mobads.baidu.com
+^https?:\/\/(cpu-openapi|mobads)\.baidu\.com\/(api\/.+\/data\/list|ads\/.+) - reject
+
 [Map Local]
 # > 小程序_便利蜂@ddgksf2013
 ^https?:\/\/api\.blibee\.com\/cvsnotify-api\/cvs\/notify\/app\/banner\/v\d+$ data-type=text data=" " status-code=200
@@ -10,6 +47,8 @@
 ^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query$ data-type=text data=" " status-code=200
 
 [Script]
+# 公众号文章去广告
+#hostname = mp.weixin.qq.com
 # > 公众号_图文去广告@ddgksf2013
 replaceBody = type=http-response, pattern=^(http|https):\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=advertisement-%3Eddgksf2013
 
@@ -20,4 +59,4 @@ zhangshanggongjiao = type=http-response, pattern=^https?:\/\/wx\.mygolbs\.com\/W
 applet = type=http-response, pattern="^(https?://)?([a-zA-Z0-9]+(-[a-zA-Z0-9]+)*\.)+[a-zA-Z]{2,}(:\d+)?/wp-json/[a-zA-Z0-9_-]+/(mp\/)?v\d/posts", script-path=https://github.com/ddgksf2013/Scripts/raw/master/applet.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
-hostname = %APPEND% api.blibee.com, ucmp.sf-express.com, www.bbkj.work, wx.wxqqurl.cn, wp3.lobdol.cn, awg.enmonster.com, mp.weixin.qq.com, wx.mygolbs.com, jabi.coding.net, api.bspapp.com, 3dd0be8a-54fe-43ff-a0e7-f670c4f20432.bspapp.com, *.tslt.xyz, g.syshhc.top, c.jxjt888.top, www.laoguikeji.cn, qj.bpojie.com, b.tslt.xyz, m.xgjyouhui.com, www.freeheikeji.cn, xcx.xianbaow.com, *.smkj33.top, *.ddly666.top, hkj178.com, a.jxjt888.top, lysl2020.com, www.i3zh.com, iosoi.cn, jt.jxjt888.top, gjsx.vip, d.syshhc.top, gz.gongzijx.com, tvapp.guilaile.cn, www.benbenfx.xyz, 4thdimension.top, tan.ipnas.ltd
+hostname = %APPEND% api.blibee.com, ucmp.sf-express.com, www.bbkj.work, wx.wxqqurl.cn, wp3.lobdol.cn, awg.enmonster.com, mp.weixin.qq.com, *.mygolbs.com, jabi.coding.net, api.bspapp.com, 3dd0be8a-54fe-43ff-a0e7-f670c4f20432.bspapp.com, *.tslt.xyz, g.syshhc.top, c.jxjt888.top, www.laoguikeji.cn, qj.bpojie.com, b.tslt.xyz, m.xgjyouhui.com, www.freeheikeji.cn, xcx.xianbaow.com, *.smkj33.top, *.ddly666.top, hkj178.com, a.jxjt888.top, lysl2020.com, www.i3zh.com, iosoi.cn, jt.jxjt888.top, gjsx.vip, d.syshhc.top, gz.gongzijx.com, tvapp.guilaile.cn, www.benbenfx.xyz, 4thdimension.top, tan.ipnas.ltd, crpu-openapi.baidu.com, adim.pinduoduo.com, *.360buyimg.com, api.m.jd.com, ms.jr.jd.com
