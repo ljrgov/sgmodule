@@ -25,4 +25,4 @@ http-response ^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGet
 http-response ^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/DiDi/DiDi_remove_ads.js, requires-body = true, tag = 移除广告
 
 [Mitm]
-hostname = api.udache.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, daijia.kuaidadi.com, freight.xiaojukeji.com, hd.xiaojukeji.com, res.xiaojukeji.com
+hostname = api.udache.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, *.xiaojukeji.com, daijia.kuaidadi.com
