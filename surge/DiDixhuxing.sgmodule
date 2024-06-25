@@ -1,0 +1,5 @@
+[Script]
+滴滴出行内容过滤 = type=http-response, pattern=^https:\/\/.*\/(other\/pGetSceneList|homepage\/v1\/core|ota\/na\/yuantu\/infoList|usercenter\/me|resapi\/activity\/mget|dynamic\/conf|homepage\/v1\/other\/fast|agent\/v3\/feeds|resapi\/activity\/xpget|gateway), requires-body=1, max-size=0, script-path=path/to/your/script.js
+
+[MITM]
+hostname = %APPEND% *.didichuxing.com
