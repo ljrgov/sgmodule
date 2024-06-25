@@ -1,15 +1,12 @@
 #!name=❏ 彩云天气
 #!category=去除广告&软件解锁
 #!desc=彩云天气
-
-[Map Local]
-# > 彩云天气 去广告
-^https:\/\/biz\.cyapi\.cn\/p\/v1\/entries\? data-type=text data="{}" status-code=200
+#!author=MoonYuki
 
 [Script]
 # > 彩云天气 解锁
-彩云天气 = type=http-response, pattern=^https:\/\/biz\.cyapi\.cn\/(p\/v1\/vip_info|v2\/user)|^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js, requires-body=true, max-size=-1
-彩云天气 = type=http-request, pattern=^https:\/\/wrapper\.cyapi\.cn\/v1\/(nafp\/origin_images|satellite)\?, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caiyun.js
+cytq.response.js=type=http-response,pattern=^https?:\/\/biz\.cyapi\.cn\/(p\/v1\/vip_info|v2\/user),requires-body=true,max-size=16384,script-path=https://raw.githubusercontent.com/MoonYuki/Surge/main/Script/Cytq/cytq.js,argument=EXPIRES_TIME={{{EXPIRES_TIME}}}
+cytq.ad.js=type=http-response,pattern=^https?:\/\/ad\.cyapi\.cn\/v2\/req,requires-body=true,max-size=16384,script-path=https://raw.githubusercontent.com/MoonYuki/Surge/main/Script/Cytq/cytq.js,argument=EXPIRES_TIME={{{EXPIRES_TIME}}}
 
 [MITM]
-hostname= %APPEND% biz.cyapi.cn, wrapper.cyapi.cn
+hostname= %APPEND% *.cyapi.cn
