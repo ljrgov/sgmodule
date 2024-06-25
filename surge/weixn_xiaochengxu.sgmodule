@@ -59,6 +59,8 @@ DOMAIN,gwp.xiaojukeji.com,REJECT
 ^https?:\/\/ucmp\.sf-express\.com\/cx-wechat-query\/query\/info-flow\/reconsitution-list - reject
 
 [Map Local]
+# 移除公众号中的推广内容 //mp.weixin.qq.com
+^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|masonryfeed|relatedarticle)\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
 # > 小程序_便利蜂@ddgksf2013
 ^https?:\/\/api\.blibee\.com\/cvsnotify-api\/cvs\/notify\/app\/banner\/v\d+$ data-type=text data=" " status-code=200
 # > 小程序_顺丰速运@ddgksf2013
@@ -327,6 +329,7 @@ T3出行去广告 = type=http-response, pattern=^https:\/\/passenger\.t3go\.cn\/
 
 #古茗 newton.gumingnc.com
 古茗去广告 = type=http-response, pattern=^https:\/\/newton\.gumingnc\.com\/newton-buyer\/newton\/buyer\/(ump|touch|external\/front), script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/WexinMiniPrograms/ming/ming.js, requires-body=true
+
 # 公众号文章去广告
 #hostname = mp.weixin.qq.com
 # > 公众号_图文去广告@ddgksf2013
