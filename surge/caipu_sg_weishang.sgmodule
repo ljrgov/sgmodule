@@ -1,6 +1,6 @@
-#!name=菜谱大全,swiftgram,微商海报
+#!name=软件合集(一般永久)
 #!category=✌️去广告、会员
-#!desc=菜谱大全,swiftgram,微商海报
+#!desc=环球翻译官,菜谱大全,swiftgram,微商海报
 
 
 
@@ -12,9 +12,12 @@ cpdq = type=http-response, pattern=^https:\/\/apiios_dq\.xiangha\.com, script-pa
 # > Nicegram/swiftgram解锁会员####
 Nicegram&swiftgram = type=http-response, pattern=^https?:\/\/nicegram\.cloud\/api\/v\d\/(ai-assistant\/purchase-list|user\/info|telegram\/auth), script-path=https://github.com/ddgksf2013/MoYu/raw/master/NicegramProCrack.js, requires-body=true, max-size=-1, timeout=60
 
+# >环球翻译官-拍照实时语音文字翻译器（永久会员）
+hqfyg = type=http-response, pattern=^https?:\/\/hqfyg.5exg.cn\/translation\/getuserinfo, script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/hqfyg.js, requires-body=true, max-size=-1, timeout=60
+
 # >微商海报-海报制作&搞定海报设计（永久会员）
 wshb = type=http-response, pattern=^https?:\/\/api-poster.ycase.cn\/(web\/display\?subject|api\/user\/info|api\/User\/home), script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/wshb.js, requires-body=true, max-size=-1, timeout=60
 
 [MITM]
-hostname= %APPEND% dq.xiangha.com, apiios_dq.xiangha.com, nicegram.cloud, api-poster.ycase.cn
+hostname= %APPEND% dq.xiangha.com, apiios_dq.xiangha.com, nicegram.cloud, api-poster.ycase.cn, hqfyg.5exg.cn
 
