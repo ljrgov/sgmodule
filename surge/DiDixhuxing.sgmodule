@@ -7,20 +7,33 @@
 [Rule]
 DOMAIN,gwp.xiaojukeji.com,REJECT
 
-[Script]
-滴滴出行-pGetSceneList = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/ljrgov/script/master/surge/didichucing.js
-滴滴出行-homepageCore = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/ljrgov/script/master/surge/didichucing.js
-滴滴出行-yuantuInfoList = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/ljrgov/script/master/surge/didichucing.js
-滴滴出行-usercenterMe = type=http-response, pattern=^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/ljrgov/script/master/surge/didichucing.js
-滴滴出行-resapiActivity = type=http-response, pattern=^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/ljrgov/script/master/surge/didichucing.js
-滴滴出行-dynamicConf = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/ljrgov/script/master/surge/didichucing.js
-滴滴出行-homepageOtherFast = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/ljrgov/script/master/surge/didichucing.js
-滴滴出行-agentFeeds = type=http-response, pattern=^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/ljrgov/script/master/surge/didichucing.js
-滴滴出行-xpget = type=http-response, pattern=^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/ljrgov/script/master/surge/didichucing.js
-滴滴出行-gateway = type=http-response, pattern=^https:\/\/(daijia|freight)\.xiaojukeji\.com\/gateway, requires-body=1, max-size=0, script-path=https://raw.githubusercontent.com/ljrgov/script/master/surge/didichucing.js
+[Map Local]
+^https:\/\/hd\.xiaojukeji\.com\/d data-type=text data="{}" status-code=200
 
-[URL Rewrite]
-^https:\/\/hd\.xiaojukeji\.com\/d  - reject
+[Script]
+移除广告 = type=http-response, pattern=^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me, script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/DiDi/DiDi_remove_ads.js, requires-body=true
+
+移除广告 = type=http-response, pattern=^https:\/\/daijia\.kuaidadi\.com\/gateway, script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/DiDi/DiDi_remove_ads.js, requires-body=true
+
+移除广告 = type=http-response, pattern=^https:\/\/daijia\.kuaidadi\.com:443\/gateway, script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/DiDi/DiDi_remove_ads.js, requires-body=true
+
+移除广告 = type=http-response, pattern=^https:\/\/freight\.xiaojukeji\.com\/gateway, script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/DiDi/DiDi_remove_ads.js, requires-body=true
+
+移除广告 = type=http-response, pattern=^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/xpget, script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/DiDi/DiDi_remove_ads.js, requires-body=true
+
+移除广告 = type=http-response, pattern=^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds, script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/DiDi/DiDi_remove_ads.js, requires-body=true
+
+移除广告 = type=http-response, pattern=^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget, script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/DiDi/DiDi_remove_ads.js, requires-body=true
+
+移除广告 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/other\/fast, script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/DiDi/DiDi_remove_ads.js, requires-body=true
+
+移除广告 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf, script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/DiDi/DiDi_remove_ads.js, requires-body=true
+
+移除广告 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core, script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/DiDi/DiDi_remove_ads.js, requires-body=true
+
+移除广告 = type=http-response, pattern=^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList, script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/DiDi/DiDi_remove_ads.js, requires-body=true
+
+移除广告 = type=http-response, pattern=^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList, script-path=https://raw.githubusercontent.com/luestr/ProxyResource/main/Resource/Script/DiDi/DiDi_remove_ads.js, requires-body=true
 
 [MITM]
-hostname = %APPEND% hd.xiaojukeji.com, common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 139.199.240.84
+hostname = %APPEND% api.udache.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, daijia.kuaidadi.com, freight.xiaojukeji.com, hd.xiaojukeji.com, res.xiaojukeji.com
