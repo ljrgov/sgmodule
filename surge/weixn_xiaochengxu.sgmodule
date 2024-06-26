@@ -14,6 +14,8 @@ DOMAIN,ad.maoyan.com,REJECT
 DOMAIN,gwp.xiaojukeji.com,REJECT
 
 [URL Rewrite]
+# URL Rewrite 规则：拦截广告图片请求并返回空白
+^http://wxsnsdythumb\.wxs\.qq\.com/131/20204/snssvpdownload/SH/reserved/ads_svp_video__.*\.jpeg - reject
 ^https:\/\/webapi\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert-reach$ - reject
 # 交通银行小程序开屏广告 @张军
 ^https:\/\/creditcardapp\.bankcomm\.com\/cnsvPmpaMdbcardWeb\/page\/getGuidePageAds - reject
@@ -331,9 +333,6 @@ T3出行去广告 = type=http-response, pattern=^https:\/\/passenger\.t3go\.cn\/
 古茗去广告 = type=http-response, pattern=^https:\/\/newton\.gumingnc\.com\/newton-buyer\/newton\/buyer\/(ump|touch|external\/front), script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/WexinMiniPrograms/ming/ming.js, requires-body=true
 
 # 公众号文章去广告
-# URL Rewrite 规则：拦截广告图片请求并返回空白
-http-request ^http://wxsnsdythumb\.wxs\.qq\.com/131/20204/snssvpdownload/SH/reserved/ads_svp_video__.*\.jpeg script-path=block-ad-request.js, requires-body=true, max-size=-1
-######
 #hostname = mp.weixin.qq.com
 # > 公众号_图文去广告@ddgksf2013
 replaceBody = type=http-response, pattern=^(http|https):\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, max-size=-1, timeout=30, argument=advertisement-%3Eddgksf2013
