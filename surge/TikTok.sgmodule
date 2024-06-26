@@ -3,7 +3,7 @@
 #!category=✌️去广告、会员
 #!icon=https://raw.githubusercontent.com/luestr/IconResource/main/App_icon/120px/TikTok.png
 #!homepage=https://github.com/luestr/ProxyResource/tree/main/Tool/Loon/Plugin
-#!arguments=-手动输入地区代码[可选]: US
+#!arguments=-手动输入地区代码[可选]:US
 #!arguments-desc=-国家代码选择: [台湾TW, 日本JP, 韩国KR, 泰国TH, 越南VN, 英国GB, 法国FR, 德国DE, 美国US, 巴西BR, 俄罗斯RU, 墨西哥MX, 土耳其TR, 西班牙ES, 阿根廷AR, 新加坡SG, 菲律宾PH, 马来西亚MY]
 
 [Rule]
