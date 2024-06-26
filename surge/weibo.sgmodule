@@ -1,5 +1,6 @@
 #!name=微博
 #!desc=全面净化
+#!category=✌️去广告、会员
 
 [URL Rewrite]
 ^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/(get-lbs-cell-info\.php|sdkconfig\.php) - reject
