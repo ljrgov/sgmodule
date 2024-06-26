@@ -113,7 +113,7 @@ DOMAIN-KEYWORD,ttlivecdn.com., PROXY
 ^https:\/\/tnc16-platform-useast1a\.tiktokv\.com\/get_domains\/ - reject
 
 [Script]
-TikTok解锁 = type=http-request, pattern=https?:\/\/.+.(tiktokv|tiktokcdn).com\/.+(region\d?=CN|&mcc_mnc=\d+), script-path=https://raw.githubusercontent.com/ljrgov/script/master/surge/TikTok.js, requires-body=true
+TikTok解锁 = type=http-request, pattern=https?:\/\/.+.(tiktokv|tiktokcdn).com\/.+(region\d?=CN|&mcc_mnc=\d+), script-path=https://raw.githubusercontent.com/ljrgov/script/master/surge/TikTok.js, requires-body=true,argument="{"region=":"{{{-手动输入地区代码[可选]}}}"
 
 [MITM]
 hostname = %APPEND% *.byteoversea.com, *.tik-tokapi.com, *.tiktokv.com, *.tiktokcdn.com
