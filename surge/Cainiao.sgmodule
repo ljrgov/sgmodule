@@ -7,6 +7,8 @@
 #!date=2024-02-18 15:50:34
 
 [Rule]
+#Surge 必须屏蔽
+AND,((OR,((USER-AGENT,Cainiao*), (USER-AGENT,AMap*))), (URL-REGEX,^http:\/\/(amdc|\d).+\/amdc\/mobileDispatch$)),REJECT-DROP
 DOMAIN,adsmind.ugdtimg.com,REJECT
 DOMAIN,amdc.m.youku.com,REJECT
 DOMAIN,apiv4-iyes.youku.com,REJECT
