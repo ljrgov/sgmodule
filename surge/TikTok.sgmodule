@@ -11,9 +11,9 @@
 # 2024-04-30 00:47:47
 AND,((GEOIP, CN), (DOMAIN, pitaya.bytedance.com)),DIRECT
 DOMAIN,api.snapkit.com,TikTok
-DOMAIN,cocacola.co.jp, PROXY
-DOMAIN,courses.snapsolve.com, PROXY
-DOMAIN,engagements.appsflyer.com, PROXY
+DOMAIN,cocacola.co.jp,TikTok
+DOMAIN,courses.snapsolve.com,TikTok
+DOMAIN,engagements.appsflyer.com,TikTok
 DOMAIN,lf16-campaign.ttlstatic.com, PROXY
 DOMAIN,lf16-csp.oecstatic.com, PROXY
 DOMAIN,lf16-pkgcdn.pitaya-clientai.com, PROXY
