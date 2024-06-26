@@ -14,8 +14,6 @@ DOMAIN,ad.maoyan.com,REJECT
 DOMAIN,gwp.xiaojukeji.com,REJECT
 
 [URL Rewrite]
-# URL Rewrite 规则：拦截广告图片请求并返回空白
-^http://wxsnsdythumb\.wxs\.qq\.com/131/20204/snssvpdownload/SH/reserved/ads_svp_video__.*\.jpeg - reject
 ^https:\/\/webapi\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert-reach$ - reject
 # 交通银行小程序开屏广告 @张军
 ^https:\/\/creditcardapp\.bankcomm\.com\/cnsvPmpaMdbcardWeb\/page\/getGuidePageAds - reject
