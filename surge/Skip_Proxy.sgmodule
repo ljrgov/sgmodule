@@ -1,6 +1,6 @@
 #!name=Skip Proxy And Real-IP Lists
 #!desc=跳过部分应用的代理检测
-#！category=🧰功能模块
+#!category=🧰功能模块
 [General]
 skip-proxy = %APPEND% www.baidu.com,yunbusiness.ccb.com,wxh.wo.cn,gate.lagou.com,www.abchina.com.cn,www.shanbay.com,login-service.mobile-bank.psbc.com,mobile-bank.psbc.com
 always-real-ip = %APPEND% easy-login.10099.com.cn,*-update.xoyocdn.com
